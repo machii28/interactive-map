@@ -2,11 +2,12 @@ var defaults = {
   center: [0, 0],
   zoom: 6,
   gestureHandling: "greedy",
-  min_zoom: 5,
+  min_zoom: 2,
   max_zoom: 9,
   tile_size: 256,
   stage_zoom: 8,
   name: "Masterplan",
+  repeat: false,
 };
 
 var imageMapType;
@@ -15,7 +16,7 @@ var mapTypeOptions;
 function load() {
   mapTypeOptions = {
     getTileUrl: function (coord, zoom) {
-      var img_url = `./images/slices/${zoom}_${coord.x}_${coord.y}.gif`;
+      var img_url = `./images/slices/${zoom}_${coord.x}_${coord.y}.png`;
 
       return img_url;
     },
